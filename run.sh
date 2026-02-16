@@ -77,7 +77,7 @@ RUN make
 EOF
 
 echo -e "${BLUE}[2/3] Building and compiling (this takes time)...${NC}"
-docker build -t supergfxctl-build -f Dockerfile.tmp .
+sudo docker build -t supergfxctl-build -f Dockerfile.tmp .
 
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Compile failed.${NC}"
@@ -87,7 +87,7 @@ fi
 
 echo -e "${BLUE}[3/3] Extracting binaries...${NC}"
 mkdir -p ./bin
-docker run --rm -v $(pwd)/bin:/output supergfxctl-build cp -r /supergfxctl/target/release/supergfxctl /supergfxctl/target/release/supergfxd /supergfxctl/data /output/
+sudo docker run --rm -v $(pwd)/bin:/output supergfxctl-build cp -r /supergfxctl/target/release/supergfxctl /supergfxctl/target/release/supergfxd /supergfxctl/data /output/
 
 echo -e "${YELLOW}[!] Reclaiming file ownership from Docker (root) to $USER...${NC}"
 sudo chown -R $USER:$USER ./bin
