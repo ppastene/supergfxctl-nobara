@@ -7,9 +7,9 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 
-echo -e "${BLUE}==================================================${NC}"
-echo -e "${BLUE}    SUPERGFXCTL - DOCKER COMPILER AND INSTALLER   ${NC}"
-echo -e "${BLUE}==================================================${NC}"
+echo -e "${BLUE}================================================${NC}"
+echo -e "${BLUE}    SUPERGFXCTL NOBARA COMPILER AND INSTALLER   ${NC}"
+echo -e "${BLUE}================================================${NC}"
 echo -e "${YELLOW}NOTE: This script uses Docker to compile. Make sure Docker is running beforehand.${NC}"
 echo -e "${YELLOW}NOTE: Docker runs as root; files generated in ./bin will be automatically reassigned to your user ($USER).${NC}"
 echo -e "${YELLOW}[!] This script requires administrative privileges to manage files and Docker permissions.${NC}"
